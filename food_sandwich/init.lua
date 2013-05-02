@@ -29,7 +29,7 @@ minetest.register_craftitem("food_sandwich:cheese", {
 	groups={food=2},
 })
 
-minetest.register_craft({
+food.recipe({
 	output = '"food:sw_meat" 1',
 	recipe = {
                  {"",'"food_baking:bread_slice"',""},
@@ -38,7 +38,7 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_craft({
+food.recipe({
 	output = '"food:sw_cheese" 1',
 	recipe = {
                  {"",'"food_baking:bread_slice"',""},

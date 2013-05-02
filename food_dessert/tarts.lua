@@ -27,20 +27,20 @@ minetest.register_craftitem("food_dessert:tart_base_raw", {
 	inventory_image = "food_tart_base_raw.png",
 })
 
-minetest.register_craft({
+food.recipe({
 	type = "cooking",
 	output = "food_dessert:tart_base",
 	recipe = "food_dessert:tart_base_raw",
 })
 
-minetest.register_craft({
+food.recipe({
 	output = '"food_dessert:tart_strawberry" 1',
 	recipe = {
 	         {'"food:strawberry"'},{'"food_dessert:tart_base"'},
 	}
 })
 
-minetest.register_craft({
+food.recipe({
 	output = '"food_dessert:tart_base_raw" 1',
 	recipe = {
 	         {'"food:flour"','"food:milk"','"food:egg"'},

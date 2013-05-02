@@ -22,7 +22,7 @@ minetest.register_craftitem("food_dessert:crumble_rhubarb_raw", {
 	inventory_image = "food_crumble_rhubarb_raw.png",
 })
 
-minetest.register_craft({
+food.recipe({
 	output = '"food_dessert:crumble_rhubarb_raw" 1',
 	recipe = {
 	{'"food:sugar"',"",""},
@@ -30,7 +30,7 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_craft({
+food.recipe({
 	type = "cooking",
 	output = "food_dessert:crumble_rhubarb",
 	recipe = "food_dessert:crumble_rhubarb_raw",

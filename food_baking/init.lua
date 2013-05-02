@@ -38,7 +38,7 @@ minetest.register_node(":food:bread", {
 		}
 	}
 })
-minetest.register_craft({
+food.recipe({
 	type = "cooking",
 	output = "food:bread",
 	recipe = "food:dough",
@@ -50,7 +50,7 @@ minetest.register_craftitem(":food:dough", {
 	description = "Cake Mix",
 	inventory_image = "farming_cake_mix.png",
 })
-minetest.register_craft({
+food.recipe({
 	output = ":food:dough",
 	type = "shapeless",
 	recipe = {"food:flour", "food:flour", "food:flour", "food:flour", "bucket:bucket_water"},
@@ -69,7 +69,7 @@ minetest.register_craftitem(":farming:cake_mix", {
 })
 end
 
-minetest.register_craft({
+food.recipe({
 	output = '"food_baking:bread_slice" 10',
 	recipe = {
 		{'"food_baking:bread"'},
@@ -98,13 +98,13 @@ minetest.register_craftitem("food_baking:bun", {
 	groups={food=2},
 })
 
-minetest.register_craft({
+food.recipe({
 	type = "cooking",
 	output = "food_baking:bun",
 	recipe = "food_baking:bun_mix",
 })
 
-minetest.register_craft({
+food.recipe({
 	output = '"food_baking:bun_mix" 5',
 	recipe = {
         {"food:flour", "food:flour", "bucket:bucket_water"},

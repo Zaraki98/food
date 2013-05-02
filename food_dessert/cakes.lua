@@ -30,21 +30,21 @@ minetest.register_craftitem("food_dessert:cakemix_carrot",{
 	inventory_image = "food_pastry_carrot.png",
 })
 
-minetest.register_craft({
+food.recipe({
 	type = "cooking",
 	output = "food_dessert:cake",
 	recipe = "food_dessert:cakemix_plain",
 	cooktime = 10,
 })
 
-minetest.register_craft({
+food.recipe({
 	type = "cooking",
 	output = "food_dessert:cake_chocolate",
 	recipe = "food_dessert:cakemix_choco",
 	cooktime = 10,
 })
 
-minetest.register_craft({
+food.recipe({
 	type = "cooking",
 	output = "food_dessert:cake_carrot",
 	recipe = "food_dessert:cakemix_carrot",
@@ -79,21 +79,21 @@ minetest.register_craftitem("food_dessert:cake_carrot", {
 
 ----------------------------- Cake Pastry ----------------------------
 
-minetest.register_craft({
+food.recipe({
 	output = '"food_dessert:cakemix_plain" 1',
 	recipe = {
 		{'"food:flour"','"food:sugar"','"food:egg"'},
 	}
 })
 
-minetest.register_craft({
+food.recipe({
 	output = '"food_dessert:cakemix_choco" 1',
 	recipe = {
 	{'""','"food:chocolate_milk"','""'},	{'"food:flour"','"food:sugar"','"food:egg"'},
 	}
 })
 
-minetest.register_craft({
+food.recipe({
 	output = '"food_dessert:cakemix_carrot" 1',
 	recipe = {
 	{'""','"food:carrot"','""'},	{'"food:flour"','"food:sugar"','"food:egg"'},
