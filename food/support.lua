@@ -26,7 +26,7 @@ function node_implement(modname,n_ext,n_int,resultfunc)
 end
 
 print "Food [Support] - Vegetables and Fruit"
-print "Food [Support] -  > Bread and Flour"
+print "Food [Support] -  > Flour"
 
 node_implement("farming","farming:flour","food:flour",function()
 	node_implement("plantlib","plantlib:wheat","food:wheat",function()
@@ -48,38 +48,6 @@ node_implement("farming","farming:flour","food:flour",function()
 		}
 	})
 end)
-
-node_implement("farming","farming:bread","food:bread",function()
-minetest.register_craftitem("food:bread", {
-	description = "Bread",
-	inventory_image = "food_bread.png",
-	stack_max = 1,
-	on_use = minetest.item_eat(10),
-	groups={food=2},
-})
-minetest.register_craft({
-	type = "cooking",
-	output = "food:bread",
-	recipe = "food:dough",
-	cooktime = 10,
-})
-end)
-
-
-node_implement("farming","farming:cake_mix","food:dough",function()
-minetest.register_craftitem("food:dough", {
-	description = "Cake Mix",
-	inventory_image = "farming_cake_mix.png",
-})
-minetest.register_craft({
-	output = "food:dough",
-	type = "shapeless",
-	recipe = {"food:flour", "food:flour", "food:flour", "food:flour", "bucket:bucket_water"},
-	replacements = {{"bucket:bucket_water", "bucket:bucket_empty"}},
-})
-end)
-
-
 
 print "Food [Support] -  > Strawberry"
 
