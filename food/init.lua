@@ -14,20 +14,7 @@ print ("Food: Loading mainframe: [Master]")
 
 ----------------------Load Files-----------------------------
 dofile(minetest.get_modpath("food").."/support.lua")
-
 dofile(minetest.get_modpath("food").."/dairy.lua")
-dofile(minetest.get_modpath("food").."/food/meats.lua")
-dofile(minetest.get_modpath("food").."/food/sandwich.lua")
-dofile(minetest.get_modpath("food").."/food/baking.lua")
-dofile(minetest.get_modpath("food").."/food/soup.lua")
-
-dofile(minetest.get_modpath("food").."/snacks/crumbles.lua")
-dofile(minetest.get_modpath("food").."/snacks/cakes.lua")
-dofile(minetest.get_modpath("food").."/snacks/tarts.lua")
-
-dofile(minetest.get_modpath("food").."/drinks/juice.lua")
-dofile(minetest.get_modpath("food").."/drinks/hot.lua")
-
 
 
 ----------------------------Cup------------------------------

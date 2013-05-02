@@ -307,9 +307,9 @@ node_implement("my_mobs","my_mobs:milk_glass_cup","food:milk",function()
 	stack_max=10
 })
 minetest.register_craft({
-	output = '"food:meat_raw" 1',
+	output = '"food:milk" 1',
 	recipe = {
-		{"default:apple"},
+		{"default:sand"},
 		{"bucket:bucket_water"}
 	},
 	replacements = {{"bucket:bucket_water", "bucket:bucket_empty"}},
