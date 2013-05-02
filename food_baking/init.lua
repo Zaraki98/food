@@ -21,7 +21,7 @@ minetest.register_node(":food:bread", {
 	tiles = {"food_bread_texture.png"},
 	stack_max = 1,
 	on_use = minetest.item_eat(10),
-	groups={food=2},
+	groups={food=2,crumbly=3},
 	drawtype="nodebox",
 	paramtype = "light",
 	node_box = {

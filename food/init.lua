@@ -47,6 +47,8 @@ minetest.register_craft({
 
 minetest.register_node("food:bowl",{
 	description = "Bowl",
+	sounds = default.node_sound_glass_defaults(),
+	groups = {cracky=3,oddly_breakable_by_hand=3},
 	inventory_image = "food_bowl.png",
 	tiles = {"food_bowl_texture.png"},
 	drawtype="nodebox",
