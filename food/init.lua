@@ -26,72 +26,6 @@ function node_implement(modname,n_ext,n_int,resultfunc)
          end
 end
 
-food = {}
-food.recipes = {}
-function food.recipe(recipe)
-	minetest.register_craft(recipe)
-	print("[DEBUG] recipe for "..food.strip_name(recipe.output).." registered")
-	
-	-- you mod_debug = 1 to run
-	if minetest.setting_getbool("mod_debug")==true then
-		table.insert(food.recipes,recipe)
-	end
-end
-
-function food.assert(name,output)
-	if minetest.registered_items[food.strip_name(name)] == nil then
-		print("[RECIPE ERROR] "..food.strip_name(name).." in recipe for "..food.strip_name(output))
-	end
-end
-
-function food.strip_name(name)
-	res = name:gsub('%"', '')
-
-	if res:sub(1,1) == ":" then
-    		res = table.concat{res:sub(1,1-1), "", res:sub(1+1)}
-	end
-
-	for str in string.gmatch(res, "([^ ]+)") do
-		if (str~=" " and str~=nil) then
-			res=str
-			break
-		end
-	end
-
-	return res
-end
-
--- Recursion method
-function food.check_recipe(table,output)
-	if type(table) == "table" then
-		for i=1,# table do
-			food.check_recipe(table[i],output)
-		end
-	else
-		food.assert(table,output)
-	end
-end
-
--- you mod_debug = 1 to run
-if minetest.setting_getbool("mod_debug")==true then
-	minetest.after(0, function()
-		print("[DEBUG] checking recipes")
-		for i=1,# food.recipes do
-			if food.recipes[i] and food.recipes[i].output then
-				food.assert(food.recipes[i].output,food.recipes[i].output)
-
-                                if type(food.recipes[i].recipe) == "table" then
-					for a=1,# food.recipes[i].recipe do
-						food.check_recipe(food.recipes[i].recipe[a],food.recipes[i].output)
-					end
-                                else
-                                	food.assert(food.recipes[i].recipe,food.recipes[i].output)
-                                end
-			end
-		end
-	end)
-end
-
 ----------------------Load Files-----------------------------
 dofile(minetest.get_modpath("food").."/support.lua")
 dofile(minetest.get_modpath("food").."/dairy.lua")
@@ -109,7 +43,7 @@ minetest.register_craftitem("food:clay_mug",{
 	inventory_image = "food_clay_mug.png",
 })
 
-food.recipe({
+minetest.register_craft({
 	output = '"food:clay_mug" 1',
 	recipe = {
 		{"default:clay_lump","","default:clay_lump"},
@@ -118,7 +52,7 @@ food.recipe({
 	}
 })
 
-food.recipe({
+minetest.register_craft({
 	type = "cooking",
 	output = "food:mug",
 	recipe = "food:clay_mug",
@@ -155,7 +89,7 @@ minetest.register_craftitem("food:sugar", {
 	description = "Sugar",
 	inventory_image = "food_sugar.png",
 })
-food.recipe({
+minetest.register_craft({
 	output = '"food:sugar" 20',
 	recipe = {
 		{'"default:papyrus"'},
@@ -169,7 +103,7 @@ minetest.register_craftitem("food:cactus_slice", {
 	inventory_image = "food_cactus_slice.png",
 	on_use = minetest.item_eat(2),
 })
-food.recipe({
+minetest.register_craft({
 	output = '"food:cactus_slice" 4',
 	recipe = {
 		{'"default:cactus"'},

@@ -23,14 +23,14 @@ minetest.register_craftitem("food:cheese", {
 })
 
 
-food.recipe({
+minetest.register_craft({
 	output = '"food:butter" 1',
 	recipe = {
 	         {'"food:milk"','"food:milk"'},
 	}
 })
 
-food.recipe({
+minetest.register_craft({
 	output = '"food:cheese" 1',
 	recipe = {
 	         {'"food:butter"','"food:butter"'},
@@ -62,14 +62,14 @@ minetest.register_craftitem("food:chocolate_powder", {
 	inventory_image = "food_choco_powder.png",
 })
 
-food.recipe({
+minetest.register_craft({
 	output = '"food:chocolate_dark" 1',
 	recipe = {
 	         {'"food:cocoa"','"food:cocoa"','"food:cocoa"'},
 	}
 })
 
-food.recipe({
+minetest.register_craft({
 	output = '"food:chocolate_powder" 1',
 	recipe = {
                  {"food:cocoa","food:cocoa","food:cocoa"},
@@ -78,7 +78,7 @@ food.recipe({
 	}
 })
 
-food.recipe({
+minetest.register_craft({
 	output = '"food:chocolate_milk" 1',
 	recipe = {
 	         {"","food:milk",""},
@@ -86,7 +86,7 @@ food.recipe({
 	}
 })
 
-food.recipe({
+minetest.register_craft({
 	output = '"food:chocolate_milk" 1',
 	recipe = {
 	         {"","food:milk","food:chocolate_dark"},

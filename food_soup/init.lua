@@ -24,13 +24,13 @@ minetest.register_craftitem("food_soup:tomato_raw", {
 	groups={food=2},
 })
 
-food.recipe({
+minetest.register_craft({
 	type = "cooking",
 	output = "food_soup:tomato",
 	recipe = "food_soup:tomato_raw",
 })
 
-food.recipe({
+minetest.register_craft({
 	output = '"food_soup:tomato_raw" 1',
 	recipe = {
         	{"", "", ""},
@@ -55,13 +55,13 @@ minetest.register_craftitem("food_soup:chicken_raw", {
 	groups={food=2},
 })
 
-food.recipe({
+minetest.register_craft({
 	type = "cooking",
 	output = "food_soup:chicken",
 	recipe = "food_soup:chicken_raw",
 })
 
-food.recipe({
+minetest.register_craft({
 	output = '"food_soup:chicken_raw" 1',
 	recipe = {
         	{"", "", ""},

@@ -28,7 +28,7 @@ minetest.register_craftitem("food_drinks:coffee", {
 	groups={food=1},
 })
 
-food.recipe({
+minetest.register_craft({
 	output = '"food_drinks:coffee" 1',
 	recipe = {
 		{'""','"food:coffeebean_cooked"','""'},
@@ -37,7 +37,7 @@ food.recipe({
 	}
 })
 
-food.recipe({
+minetest.register_craft({
 	output = '"food_drinks:coffee" 1',
 	recipe = {
 		{'""','"food:coffeebean_cooked"','""'},
@@ -46,7 +46,7 @@ food.recipe({
 	}
 })
 
-food.recipe({
+minetest.register_craft({
 	type = "cooking",
 	output = "food_drinks:coffeebean_cooked",
 	recipe = "food:coffeebean",
@@ -62,7 +62,7 @@ minetest.register_craftitem("food_drinks:apple_juice", {
 	on_use = minetest.item_eat(2)
 })
 
-food.recipe({
+minetest.register_craft({
 	output = '"food_drinks:apple_juice" 4',
 	recipe = {
 		{"","",""},
@@ -82,7 +82,7 @@ minetest.register_craftitem("food_drinks:cactus_juice", {
 	on_use = minetest.item_eat(2),
 })
 
-food.recipe({
+minetest.register_craft({
 	output = '"food_drinks:cactus_juice" 4',
 	recipe = {
 		{'""','""','""'},
@@ -100,7 +100,7 @@ minetest.register_craftitem("food_drinks:rainbow_juice", {
 	on_use = minetest.item_eat(50)
 })
 
-food.recipe({
+minetest.register_craft({
 	output = '"food_drinks:rainbow_juice" 99',
 	recipe = {
 		{"","",""},
