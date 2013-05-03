@@ -31,8 +31,8 @@ minetest.register_craftitem("food_drinks:coffee", {
 minetest.register_craft({
 	output = '"food_drinks:coffee" 1',
 	recipe = {
-		{'""','"food:coffeebean_cooked"','""'},
-		{'""','"food:coffeebean_cooked"','""'},
+		{'""','"food_drinks:coffeebean_cooked"','""'},
+		{'""','"food_drinks:coffeebean_cooked"','""'},
 		{'""','"food:cup"','""'},
 	}
 })
@@ -40,8 +40,8 @@ minetest.register_craft({
 minetest.register_craft({
 	output = '"food_drinks:coffee" 1',
 	recipe = {
-		{'""','"food:coffeebean_cooked"','""'},
-		{'""','"food:coffeebean_cooked"','""'},
+		{'""','"food_drinks:coffeebean_cooked"','""'},
+		{'""','"food_drinks:coffeebean_cooked"','""'},
 		{'""','"food:mug"','""'},
 	}
 })

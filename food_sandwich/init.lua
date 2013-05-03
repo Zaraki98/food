@@ -30,7 +30,7 @@ minetest.register_craftitem("food_sandwich:cheese", {
 })
 
 minetest.register_craft({
-	output = '"food:sw_meat" 1',
+	output = '"food_sandwich:meat" 1',
 	recipe = {
                  {"",'"food_baking:bread_slice"',""},
 		{"food:butter","food:meat",'"food:butter"'},
@@ -39,7 +39,7 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = '"food:sw_cheese" 1',
+	output = '"food_sandwich:cheese" 1',
 	recipe = {
                  {"",'"food_baking:bread_slice"',""},
 		{"food:butter","food:cheese",'"food:butter"'},

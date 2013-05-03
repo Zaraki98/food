@@ -12,6 +12,11 @@ print "Food [Support] -  > Flour"
 
 node_implement("farming","farming:flour","food:flour",function()
 	node_implement("plantlib","plantlib:wheat","food:wheat",function()
+		minetest.register_craftitem("food:wheat", {
+			description = "Wheat",
+			inventory_image = "farming_wheat.png",
+		})
+
 		minetest.register_craft({
 			output = '"food:wheat" 1',
 			recipe = {
@@ -271,18 +276,18 @@ print "Food [Support] - Vessels and Cutlery"
 
 node_implement("vessels","vessels:drinking_glass","food:cup",function()
 node_implement("animalmaterials","animalmaterials:glass","food:cup",function()
-   minetest.register_craftitem("food:cup",{
-	description = "Glass",
-	tiles = {"food_cup.png"},
-	inventory_image = "food_cup.png",
-})
-minetest.register_craft({
-	output = '"food:cup" 1',
-	recipe = {
-		{"default:glass"},
-		{"default:glass"}
-	}
-})
+	minetest.register_craftitem("food:cup",{
+		description = "Glass",
+		tiles = {"food_cup.png"},
+		inventory_image = "food_cup.png",
+	})
+	minetest.register_craft({
+		output = '"food:cup" 1',
+		recipe = {
+			{"default:glass"},
+			{"default:glass"}
+		}
+	})
 end)
 end)
 

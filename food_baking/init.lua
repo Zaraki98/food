@@ -14,8 +14,10 @@
 -- [craft] Bun Dough
 -- =====================================
 
-node_implement("farming","farming:bread",":food:bread",function()
-minetest.register_node(":food:bread", {
+print "Food [Baking] - Loading Bread"
+
+node_implement("farming","farming:bread","food_baking:bread",function()
+minetest.register_node("food_baking:bread", {
 	description = "Bread",
 	inventory_image = "food_bread.png",
 	tiles = {"food_bread_texture.png"},
@@ -40,29 +42,26 @@ minetest.register_node(":food:bread", {
 })
 minetest.register_craft({
 	type = "cooking",
-	output = "food:bread",
-	recipe = "food:dough",
+	output = "food_baking:bread",
+	recipe = "food_baking:dough",
 	cooktime = 10,
 })
 end)
-node_implement("farming","farming:cake_mix",":food:dough",function()
-minetest.register_craftitem(":food:dough", {
+node_implement("farming","farming:cake_mix","food_baking:dough",function()
+minetest.register_craftitem("food_baking:dough", {
 	description = "Cake Mix",
 	inventory_image = "farming_cake_mix.png",
 })
 minetest.register_craft({
-	output = ":food:dough",
+	output = "food_baking:dough",
 	type = "shapeless",
 	recipe = {"food:flour", "food:flour", "food:flour", "food:flour", "bucket:bucket_water"},
 	replacements = {{"bucket:bucket_water", "bucket:bucket_empty"}},
 })
 end)
 
-print "Food [Master] - Loading Bread"
 -- doughs
-if not minetest.get_modpath("farming") then
-
-else
+if minetest.get_modpath("farming") then
 minetest.register_craftitem(":farming:cake_mix", {
 	description = "Dough",
 	inventory_image = "farming_cake_mix.png",
