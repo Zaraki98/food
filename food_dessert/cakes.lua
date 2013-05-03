@@ -51,11 +51,29 @@ minetest.register_craft({
 	cooktime = 10,
 })
 
-minetest.register_craftitem("food_dessert:cake", {
+minetest.register_node("food_dessert:cake", {
 	description = "Cake",
 	inventory_image = "food_cake.png",
 	on_use = minetest.item_eat(30),
-	groups={food=3},
+	groups={food=3,crumbly=3},
+	tiles = {
+		"food_cake_texture.png",
+		"food_cake_texture.png",
+		"food_cake_texture_side.png",
+		"food_cake_texture_side.png",
+		"food_cake_texture_side.png",
+		"food_cake_texture_side.png"
+	},
+	drawtype="nodebox",
+	paramtype = "light",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.250000,-0.500000,-0.296880,0.250000,-0.250000,0.312502}, --NodeBox 1
+			{-0.309375,-0.500000,-0.250000,0.309375,-0.250000,0.250000}, --NodeBox 2
+			{-0.250000,-0.250000,-0.250000,0.250000,-0.200000,0.250000}, --NodeBox 3
+		}
+	}
 })
 
 minetest.register_craftitem("food_dessert:cake_chocolate", {
