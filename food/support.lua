@@ -276,10 +276,28 @@ print "Food [Support] - Vessels and Cutlery"
 
 node_implement("vessels","vessels:drinking_glass","food:cup",function()
 node_implement("animalmaterials","animalmaterials:glass","food:cup",function()
-	minetest.register_craftitem("food:cup",{
+	minetest.register_node("food:cup",{
 		description = "Glass",
 		tiles = {"food_cup.png"},
+		sounds = default.node_sound_glass_defaults(),
+		groups = {cracky=3,oddly_breakable_by_hand=3},
 		inventory_image = "food_cup.png",
+		tiles = {"food_bowl_texture.png"},
+		drawtype="nodebox",
+		paramtype = "light",
+		walkable = false,
+		sunlight_propagates = true,
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-0.125000,-0.500000,-0.125000,0.062500,-0.437500,0.062500}, --NodeBox 1
+				{0.062500,-0.437500,-0.125000,0.125000,0.000000,0.062500}, --NodeBox 3
+				{-0.187500,-0.437500,-0.125000,-0.125000,0.000000,0.062500}, --NodeBox 4
+				{-0.125000,-0.437500,0.062500,0.062500,0.000000,0.125000}, --NodeBox 5
+				{-0.125000,-0.437500,-0.187500,0.062500,0.000000,-0.125000}, --NodeBox 6
+			}
+		}
+
 	})
 	minetest.register_craft({
 		output = '"food:cup" 1',

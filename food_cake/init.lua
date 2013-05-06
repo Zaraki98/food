@@ -15,45 +15,44 @@
 print("Food [Master] - Loading Cakes")
 
 --------------------------Cakes-------------------------
-minetest.register_craftitem("food_dessert:cakemix_plain",{
+minetest.register_craftitem("food_cake:cakemix_plain",{
 	description = "Cake Mix",
 	inventory_image = "food_pastry.png",
 })
 
-minetest.register_craftitem("food_dessert:cakemix_choco",{
+minetest.register_craftitem("food_cake:cakemix_choco",{
 	description = "Chocolate Cake Mix",
 	inventory_image = "food_pastry_choco.png",
 })
 
-minetest.register_craftitem("food_dessert:cakemix_carrot",{
+minetest.register_craftitem("food_cake:cakemix_carrot",{
 	description = "Carrot Cake Mix",
 	inventory_image = "food_pastry_carrot.png",
 })
 
 minetest.register_craft({
 	type = "cooking",
-	output = "food_dessert:cake",
-	recipe = "food_dessert:cakemix_plain",
+	output = "food_cake:cake",
+	recipe = "food_cake:cakemix_plain",
 	cooktime = 10,
 })
 
 minetest.register_craft({
 	type = "cooking",
-	output = "food_dessert:cake_chocolate",
-	recipe = "food_dessert:cakemix_choco",
+	output = "food_cake:cake_chocolate",
+	recipe = "food_cake:cakemix_choco",
 	cooktime = 10,
 })
 
 minetest.register_craft({
 	type = "cooking",
-	output = "food_dessert:cake_carrot",
-	recipe = "food_dessert:cakemix_carrot",
+	output = "food_cake:cake_carrot",
+	recipe = "food_cake:cakemix_carrot",
 	cooktime = 10,
 })
 
-minetest.register_node("food_dessert:cake", {
+minetest.register_node("food_cake:cake", {
 	description = "Cake",
-	inventory_image = "food_cake.png",
 	on_use = minetest.item_eat(30),
 	groups={food=3,crumbly=3},
 	tiles = {
@@ -64,6 +63,8 @@ minetest.register_node("food_dessert:cake", {
 		"food_cake_texture_side.png",
 		"food_cake_texture_side.png"
 	},
+	walkable = false,
+	sunlight_propagates = true,
 	drawtype="nodebox",
 	paramtype = "light",
 	node_box = {
@@ -76,9 +77,8 @@ minetest.register_node("food_dessert:cake", {
 	}
 })
 
-minetest.register_node("food_dessert:cake_chocolate", {
+minetest.register_node("food_cake:cake_chocolate", {
 	description = "Chocolate Cake",
-	inventory_image = "food_cake_choco.png",
 	on_use = minetest.item_eat(40),
 	groups={food=3,crumbly=3},
 	tiles = {
@@ -89,6 +89,8 @@ minetest.register_node("food_dessert:cake_chocolate", {
 		"food_cake_choco_texture_side.png",
 		"food_cake_choco_texture_side.png"
 	},
+	walkable = false,
+	sunlight_propagates = true,
 	drawtype="nodebox",
 	paramtype = "light",
 	node_box = {
@@ -101,11 +103,12 @@ minetest.register_node("food_dessert:cake_chocolate", {
 	}
 })
 
-minetest.register_node("food_dessert:cake_carrot", {
+minetest.register_node("food_cake:cake_carrot", {
 	description = "Carrot Cake",
-	inventory_image = "food_cake_carrot.png",
 	on_use = minetest.item_eat(40),
 	groups={food=3,crumbly=3},
+	walkable = false,
+	sunlight_propagates = true,
 	tiles = {
 		"food_cake_carrot_texture.png",
 		"food_cake_carrot_texture.png",
@@ -134,21 +137,21 @@ minetest.register_node("food_dessert:cake_carrot", {
 ----------------------------- Cake Pastry ----------------------------
 
 minetest.register_craft({
-	output = '"food_dessert:cakemix_plain" 1',
+	output = '"food_cake:cakemix_plain" 1',
 	recipe = {
 		{'"food:flour"','"food:sugar"','"food:egg"'},
 	}
 })
 
 minetest.register_craft({
-	output = '"food_dessert:cakemix_choco" 1',
+	output = '"food_cake:cakemix_choco" 1',
 	recipe = {
 	{'""','"food:chocolate_milk"','""'},	{'"food:flour"','"food:sugar"','"food:egg"'},
 	}
 })
 
 minetest.register_craft({
-	output = '"food_dessert:cakemix_carrot" 1',
+	output = '"food_cake:cakemix_carrot" 1',
 	recipe = {
 	{'""','"food:carrot"','""'},	{'"food:flour"','"food:sugar"','"food:egg"'},
 	}

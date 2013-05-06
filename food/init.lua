@@ -33,9 +33,30 @@ dofile(minetest.get_modpath("food").."/dairy.lua")
 
 ----------------------------Cup------------------------------
 
-minetest.register_craftitem("food:mug",{
+minetest.register_node("food:mug",{
 	description = "Mug",
 	inventory_image = "food_mug.png",
+	tiles = {"food_bowl_texture.png"},
+	sounds = default.node_sound_glass_defaults(),
+	groups = {cracky=3,oddly_breakable_by_hand=3},
+	drawtype="nodebox",
+	paramtype = "light",
+	walkable = false,
+	sunlight_propagates = true,
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.125000,-0.500000,-0.125000,0.062500,-0.437500,0.062500}, --NodeBox 1
+			{0.062500,-0.437500,-0.125000,0.125000,0.000000,0.062500}, --NodeBox 3
+			{-0.187500,-0.437500,-0.125000,-0.125000,0.000000,0.062500}, --NodeBox 4
+			{-0.125000,-0.437500,0.062500,0.062500,0.000000,0.125000}, --NodeBox 5
+			{-0.125000,-0.437500,-0.187500,0.062500,0.000000,-0.125000}, --NodeBox 6
+			{-0.312500,-0.125000,-0.062500,-0.187500,-0.062500,0.000000}, --NodeBox 6
+			{-0.312500,-0.312500,-0.062500,-0.187500,-0.250000,0.000000}, --NodeBox 7
+			{-0.375000,-0.250000,-0.062500,-0.312500,-0.125000,0.000000}, --NodeBox 8
+		}
+	}
+
 })
 
 minetest.register_craftitem("food:clay_mug",{
@@ -65,19 +86,24 @@ minetest.register_node("food:bowl",{
 	sounds = default.node_sound_glass_defaults(),
 	groups = {cracky=3,oddly_breakable_by_hand=3},
 	inventory_image = "food_bowl.png",
-	tiles = {"food_bowl_texture.png"},
+	tiles = {
+		"food_bowl_texture_top.png",
+		"food_bowl_texture.png",
+		"food_bowl_texture.png",
+		"food_bowl_texture.png",
+		"food_bowl_texture.png",
+		"food_bowl_texture.png",
+	},
+	walkable = false,
+	sunlight_propagates = true,
 	drawtype="nodebox",
 	paramtype = "light",
 	node_box = {
 	type = "fixed",
 	fixed = {
-		{-0.250000,-0.500000,-0.250000,0.250000,-0.450000,0.250000}, --NodeBox 1
-		{-0.300000,-0.450000,-0.318750,0.309375,-0.400000,0.337500}, --NodeBox 2
-		{-0.393750,-0.403125,-0.393750,0.403125,-0.353125,0.412500}, --NodeBox 3
-		{-0.450000,-0.356250,-0.440625,-0.337500,-0.306250,0.450000}, --Rim 1
-		{-0.431250,-0.356250,-0.440625,0.459375,-0.300000,-0.296880}, --Rim 2
-		{0.300000,-0.356250,-0.306255,0.459375,-0.306250,0.453129}, --Rim 3
-		{-0.440625,-0.350000,0.356250,0.459375,-0.300000,0.450000}, --Rim 4
+		{-0.187500,-0.500000,-0.187500,0.187500,-0.437500,0.187500}, --NodeBox 1
+		{-0.250000,-0.437500,-0.250000,0.250000,-0.375000,0.250000}, --NodeBox 2
+		{-0.312500,-0.375000,-0.312500,0.312500,-0.250000,0.312500}, --NodeBox 3
 	}
 }
 
