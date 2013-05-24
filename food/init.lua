@@ -130,11 +130,23 @@ minetest.register_craftitem("food:cactus_slice", {
 	on_use = minetest.item_eat(2),
 })
 minetest.register_craft({
-	output = '"food:cactus_slice" 4',
+	output = "food:cactus_slice 4",
 	recipe = {
 		{'"default:cactus"'},
 
 	}
+})
+
+------------------------Pasta----------------------------------
+minetest.register_craftitem("food:pasta", {
+	description = "Pasta",
+	inventory_image = "food_pasta.png",
+})
+
+minetest.register_craft({
+	output = "food:pasta 4",
+	type = "shapeless",
+	recipe = {"food:flour","food:egg","food:egg"}
 })
 
 print("Food: Mainframe loaded")

@@ -105,7 +105,7 @@ minetest.register_craftitem("food_baking:bread_slice", {
 
 
 
-print "Food [Master] - Loading Buns"
+print "Food [Baking] - Loading Buns"
 minetest.register_craftitem("food_baking:bun_mix", {
 	description = "Bun Mix",
 	inventory_image = "food_bun_mix.png",
@@ -131,3 +131,34 @@ minetest.register_craft({
         },
 	replacements = {{"bucket:bucket_water", "bucket:bucket_empty"}}
 })
+
+print "Food [Baking] - Loading bakes"
+
+minetest.register_craftitem("food_baking:pasta_bake", {
+	description = "Pasta Bake",
+	inventory_image = "food_baking_pasta_bake.png",
+	on_use = minetest.item_eat(8),
+	groups={food=2},
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "food_baking:pasta_bake",
+	recipe = "food_baking:pasta_bake_raw",
+})
+
+minetest.register_craftitem("food_baking:pasta_bake_raw", {
+	description = "Raw Pasta Bake",
+	inventory_image = "food_baking_pasta_bake_raw.png",
+})
+
+minetest.register_craft({
+	output = "food_baking:pasta_bake_raw",
+	recipe = {
+		{"food:cheese"},
+		{"food:pasta"},
+		{"food:bowl"}
+	}
+})
+
+
