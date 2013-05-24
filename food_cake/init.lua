@@ -30,6 +30,11 @@ minetest.register_craftitem("food_cake:cakemix_carrot",{
 	inventory_image = "food_pastry_carrot.png",
 })
 
+minetest.register_craftitem("food_cake:cakemix_cheese",{
+	description = "Cheese Cake Mix",
+	inventory_image = "food_pastry_carrot.png",
+})
+
 minetest.register_craft({
 	type = "cooking",
 	output = "food_cake:cake",
@@ -51,9 +56,16 @@ minetest.register_craft({
 	cooktime = 10,
 })
 
+minetest.register_craft({
+	type = "cooking",
+	output = "food_cake:cake_cheese",
+	recipe = "food_cake:cakemix_cheese",
+	cooktime = 10,
+})
+
 minetest.register_node("food_cake:cake", {
 	description = "Cake",
-	on_use = minetest.item_eat(30),
+	on_use = minetest.item_eat(4),
 	groups={food=3,crumbly=3},
 	tiles = {
 		"food_cake_texture.png",
@@ -79,7 +91,7 @@ minetest.register_node("food_cake:cake", {
 
 minetest.register_node("food_cake:cake_chocolate", {
 	description = "Chocolate Cake",
-	on_use = minetest.item_eat(40),
+	on_use = minetest.item_eat(4),
 	groups={food=3,crumbly=3},
 	tiles = {
 		"food_cake_choco_texture.png",
@@ -105,7 +117,7 @@ minetest.register_node("food_cake:cake_chocolate", {
 
 minetest.register_node("food_cake:cake_carrot", {
 	description = "Carrot Cake",
-	on_use = minetest.item_eat(40),
+	on_use = minetest.item_eat(4),
 	groups={food=3,crumbly=3},
 	walkable = false,
 	sunlight_propagates = true,
@@ -129,6 +141,13 @@ minetest.register_node("food_cake:cake_carrot", {
 	}
 })
 
+minetest.register_craftitem("food_cake:cake_cheese",{
+	description = "Cheese cake",
+	inventory_image = "food_cake_cheese.png",
+	on_use = minetest.item_eat(4),
+	groups={food=3,crumbly=3}
+})
+
 
 
 
@@ -137,22 +156,32 @@ minetest.register_node("food_cake:cake_carrot", {
 ----------------------------- Cake Pastry ----------------------------
 
 minetest.register_craft({
-	output = '"food_cake:cakemix_plain" 1',
+	output = "food_cake:cakemix_plain",
 	recipe = {
-		{'"food:flour"','"food:sugar"','"food:egg"'},
+		{"food:flour","food:sugar","food:egg"},
 	}
 })
 
 minetest.register_craft({
-	output = '"food_cake:cakemix_choco" 1',
+	output = "food_cake:cakemix_choco",
 	recipe = {
-	{'""','"food:chocolate_milk"','""'},	{'"food:flour"','"food:sugar"','"food:egg"'},
+		{"","food:chocolate_milk",""},
+		{"food:flour","food:sugar","food:egg"},
 	}
 })
 
 minetest.register_craft({
-	output = '"food_cake:cakemix_carrot" 1',
+	output = "food_cake:cakemix_carrot",
 	recipe = {
-	{'""','"food:carrot"','""'},	{'"food:flour"','"food:sugar"','"food:egg"'},
+		{"","food:carrot",""},
+		{"food:flour","food:sugar","food:egg"},
+	}
+})
+
+minetest.register_craft({
+	output = "food_cake:cakemix_cheese",
+	recipe = {
+		{"food:cheese","food:strawberry",""},
+		{"food:flour","food:sugar","food:egg"},
 	}
 })
